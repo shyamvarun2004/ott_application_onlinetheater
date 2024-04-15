@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+<style>
+form {
+width: 500px;
+margin: 0 auto;
+}
+
+label {
+display: inline-block;
+width: 150px;
+text-align: right;
+margin-right: 10px;
+color: #355bf4;
+font-size: 2.3em;
+
+}
+
+input {
+width: 250px;
+padding: 5px;
+margin-bottom: 10px;
+}
+
+input[type="submit"] {
+margin-left: 160px;
+}
+
+table {
+border-collapse: collapse;
+width: 100%;
+margin-top: 20px;
+}
+
+th, td {
+padding: 8px;
+text-align: left;
+border-bottom: 1px solid #ddd;
+}
+
+th {
+background-color: #f2f2f2;
+}
+
+tr:hover {
+background-color: #f5f5f5;
+}
+
+
+</style>
+</head>
+<body>
+<form>
+<label for="fname">Name:</label>
+<input type="text" id="fname" name="fname" required><br>
+
+<label for="R.no">R.no:</label>
+<input type="tel" id="R.no" name="R.no"><br>
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required><br>
+
+<label for="Passward">Passward:</label>
+<input type="text" id="Passward" name="Passward" required><br>
+
+<input type="submit" value="Submit" onclick="addRow()">
+</form>
+
+<table id="myTable">
+<thead>
+<tr>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Email</th>
+<th>Phone</th>
+
+        <input type="checkbox"> Accept Terms And Conditions
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<script>
+function addRow() {
+var table = document.getElementById("myTable").getElementsByTagName("tbody")[0];
+var row = table.insertRow();
+var fname = document.getElementById("fname").value;
+var lname = document.getElementById("lname").value;
+var email = document.getElementById("email").value;
+var phone = document.getElementById("phone").value;
+
+var cell1 = row.insertCell(0);
+var cell2 = row.insertCell(1);
+var cell3 = row.insertCell(2);
+var cell4 = row.insertCell(3);
+
+cell1.innerHTML = fname;
+cell2.innerHTML = lname;
+cell3.innerHTML = email;
+cell4.innerHTML = phone;
+
+document.getElementById("fname").value = "";
+document.getElementById("lname").value = "";
+document.getElementById("email").value = "";
+document.getElementById("phone").value = "";
+}
+</script>
+</body>
+
+        
+</html>
